@@ -1,0 +1,55 @@
+  p#notice
+    = notice
+  h1 外食カウンター
+  span 今年の外食回数:
+  = @year_count
+  span.col 今月の外食回数:
+  = @month_count
+  br
+  span 今週の外食回数:
+  = @week_count
+  -if @eatday_today != nil
+    span.col 本日の外食回数:
+    = @eatday_today.eat_count
+    .buttons
+      = form_with model: @eatday_today do |f|
+        = f.hidden_field :eat_count, :value =>0
+        = f.submit '0', :class => 'submit_button'
+      = form_with model: @eatday_today do |f|
+        = f.hidden_field :eat_count, :value =>1
+        = f.submit '1', :class => 'submit_button'
+      = form_with model: @eatday_today do |f|
+        = f.hidden_field :eat_count, :value =>2
+        = f.submit '2', :class => 'submit_button'
+      = form_with model: @eatday_today do |f|
+        = f.hidden_field :eat_count, :value =>3
+        = f.submit '3', :class => 'submit_button'
+      = form_with model: @eatday_today do |f|
+        = f.hidden_field :eat_count, :value =>4
+        = f.submit '4', :class => 'submit_button'
+  -else
+    span.col 本日の外食回数:
+    .buttons
+      = form_with model: @eatday do |f|
+        = f.hidden_field :eat_count, :value =>0
+        = f.submit '0', :class => 'submit_button'
+      = form_with model: @eatday do |f|
+        = f.hidden_field :eat_count, :value =>1
+        = f.submit '1', :class => 'submit_button'
+      = form_with model: @eatday do |f|
+        = f.hidden_field :eat_count, :value =>2
+        = f.submit '2', :class => 'submit_button'
+      = form_with model: @eatday do |f|
+        = f.hidden_field :eat_count, :value =>3
+        = f.submit '3', :class => 'submit_button'
+      = form_with model: @eatday do |f|
+        = f.hidden_field :eat_count, :value =>4
+        = f.submit '4', :class => 'submit_button'
+  = month_calendar events: @eatdays do |date, eatdays|
+    = date.day
+    .count_button
+      - eatdays.each do |eatday|
+        = link_to eatday do
+          span = eatday.eat_count
+          span 食
+  = link_to "ログアウト", destroy_user_session_path, :method => :delete

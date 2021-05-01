@@ -1,0 +1,18 @@
+<h1>外食カウンター</h1>
+<div class= "login_register_box">
+<%= link_to new_user_session_path, class: "login_a" do%>
+  <button class="login-button">
+    <i class = "fa fa-user" aria-hidden="true"></i>
+    <span> ログイン </span>
+  </button>
+<% end %>
+
+
+<%= link_to new_user_registration_path, class: "register_a" do%>
+  <button class="signup-button">
+    <i class = "fas fa-sign-in-alt" aria-hidden="true"></i>
+    <span> 登録 </span>
+  </button>
+<% end %>
+</div>
+<%= javascript_pack_tag 'hello_vue' %>

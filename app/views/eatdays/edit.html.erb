@@ -1,0 +1,7 @@
+= @eatday.eat_count
+.buttons
+    = button_to '0', eatday_path(@eatday), params: {eat_count: 0}, method: :patch, class: 'btn'
+    = button_to '1', eatday_path(@eatday), params: {eat_count: 1}, method: :patch, class: 'btn'
+    = button_to '2', eatday_path(@eatday), params: {eat_count: 2}, method: :patch, class: 'btn'
+    = button_to '3', eatday_path(@eatday), params: {eat_count: 3}, method: :patch, class: 'btn'
+    = button_to '4', eatday_path(@eatday), params: {eat_count: 4}, method: :patch, class: 'btn'

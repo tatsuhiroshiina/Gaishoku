@@ -1,0 +1,101 @@
+<p id="notice"><%= notice %></p>
+<strong>
+<%= @eatday.created_at.strftime('%Y/%m/%d')  %>
+</strong>
+<p>
+  <span>外食回数</span>
+  <%= @eatday.eat_count %>
+  <br>
+
+  <div class="buttons">
+    <%= form_with model: @eatday do |f| %>
+      <%= f.hidden_field :eat_count, :value =>0 %>
+      <%= f.submit '0', :class => 'submit_button' %>
+    <% end %>
+    <%= form_with model: @eatday do |f| %>
+      <%= f.hidden_field :eat_count, :value =>1 %>
+      <%= f.submit '1', :class => 'submit_button' %>
+    <% end %>
+    <%= form_with model: @eatday do |f| %>
+      <%= f.hidden_field :eat_count, :value =>2 %>
+      <%= f.submit '2', :class => 'submit_button' %>
+    <% end %>
+    <%= form_with model: @eatday do |f| %>
+      <%= f.hidden_field :eat_count, :value =>3 %>
+      <%= f.submit '3', :class => 'submit_button' %>
+    <% end %>
+    <%= form_with model: @eatday do |f| %>
+      <%= f.hidden_field :eat_count, :value =>4 %>
+      <%= f.submit '4', :class => 'submit_button' %>
+    <% end %>
+  </div>
+<%= form_with model: @eatday do |f| %>
+  <%if @eatday.eat_count > 0 %>
+  <span>食事相手(1食目):</span>
+  <%= @eatday.people1 %>
+  <br>
+  <%= f.text_field :people1, class: 'form-control', id: 'session_email', placeholder: @eatday.people1 %>
+  <br>
+
+  <%if @eatday.eat_count > 0 %>
+  <span>メニュー(1食目):</span>
+  <%= @eatday.menu1 %>
+  <br>
+  <%= f.text_field :menu1, class: 'form-control', id: 'session_email', placeholder: @eatday.menu1 %>
+  <br>
+
+  <%if @eatday.eat_count > 1 %>
+  <span>食事相手(2食目):</span>
+  <%= @eatday.people2 %>
+  <br>
+  <%= f.text_field :people2, class: 'form-control', id: 'session_email', placeholder: @eatday.people2 %>
+  <br>
+  <% end %>
+
+  <%if @eatday.eat_count > 1 %>
+  <span>メニュー(2食目):</span>
+  <%= @eatday.menu2 %>
+  <br>
+  <%= f.text_field :menu2, class: 'form-control', id: 'session_email', placeholder: @eatday.menu2 %>
+  <br>
+  <% end %>
+
+  <%if @eatday.eat_count > 2 %>
+  <span>食事相手(3食目):</span>
+  <%= @eatday.people3 %>
+  <br>
+  <%= f.text_field :people3, class: 'form-control', id: 'session_email', placeholder: @eatday.people3 %>
+  <br>
+  <% end %>
+
+  <%if @eatday.eat_count > 2 %>
+  <span>メニュー(3食目):</span>
+  <%= @eatday.menu3 %>
+  <br>
+  <%= f.text_field :menu3, class: 'form-control', id: 'session_email', placeholder: @eatday.menu3 %>
+  <br>
+  <% end %>
+
+  <%if @eatday.eat_count > 3 %>
+  <span>食事相手(4食目):</span>
+  <%= @eatday.people4 %>
+  <br>
+  <%= f.text_field :people4, class: 'form-control', id: 'session_email', placeholder: @eatday.people4 %>
+  <br>
+
+  <%if @eatday.eat_count > 3 %>
+  <span>メニュー(4食目):</span>
+  <%= @eatday.menu4 %>
+  <br>
+  <%= f.text_field :menu4, class: 'form-control', id: 'session_email', placeholder: @eatday.menu4 %>
+  <br>
+  <% end %>
+  <% end %>
+  <% end %>
+
+  <% end %>
+</p>
+<%= f.submit "編集", class: 'register' %>
+<% end %>
+<br>
+<%= link_to '戻る', eatdays_path %>

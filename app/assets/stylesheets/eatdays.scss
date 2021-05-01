@@ -1,0 +1,42 @@
+// Place all the styles related to the eatdays controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.buttons{
+  text-align: center;
+  display: flex;
+  margin: 20px 0;
+  form{
+    width: 25%;
+  }
+}
+input.form-control{
+  margin-bottom: 5px;
+}
+input.submit_button{
+  width: 52px;
+  height: 52px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.btn{
+  margin-right: 10px;
+  cursor: pointer;
+  width: 51px;
+  height: 51px;
+  font-size: 20px;
+}
+.count_button{
+  font-size: 15px;
+  text-align: center;
+  margin-top: 13px;
+  a{
+  text-decoration: none;
+  color: black;
+  }
+  span{
+    color: blue;
+  }
+}
+.col{
+  margin-left: 30px;
+}
